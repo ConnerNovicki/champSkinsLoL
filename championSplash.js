@@ -13,12 +13,12 @@ xmlhttp.onreadystatechange = function() {
       getSplash(myObj);
     }
 };
-xmlhttp.open("GET", "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion/" + champToLoad + ".json", true);
+xmlhttp.open("GET", "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/champion/" + champToLoad + ".json", true);
 xmlhttp.send();
 
 function getThumb(obj){
     var titleDiv = document.getElementById('title');
-    var link = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/";
+    var link = "https://ddragon.leagueoflegends.com/cdn/6.24.1/img/champion/";
         var imgUrl = obj.data[champToLoad].image.full;
         var full_url = link + imgUrl;
         var titleImage = document.createElement("IMG");
@@ -33,7 +33,7 @@ function getSplash(obj){
   var skins = obj.data[champToLoad].skins;
     console.log(skins);
   for (var i=0; i < skins.length; i++){
-    var imgUrl = "http://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + champToLoad + "_" + skins[i].num + ".jpg";
+    var imgUrl = "https://ddragon.leagueoflegends.com/cdn/img/champion/splash/" + champToLoad + "_" + skins[i].num + ".jpg";
     console.log(imgUrl);
     //first skin to be shown on carousel
     if (i == 0){
